@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html ng-app="OverseerApp">
+    <head>
+        <!-- Title -->
+        <title>Overseer Monitoring Master Server</title>
+
+        <!-- Meta Tags -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Styles -->
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/libs/foundation/css/normalize.css">
+        <link rel="stylesheet" href="/libs/foundation/css/foundation.css">
+        <link rel="stylesheet" href="/libs/sweetalert/lib/sweet-alert.css" media="all">
+        <link rel="stylesheet" href="/css/styles.css" media="all">
+
+        <!-- Scripts -->
+        <script src="/libs/angular/angular.min.js"></script>
+        <script src="/libs/angular-route/angular-route.min.js"></script>
+        <script src="/libs/angular-animate/angular-animate.min.js"></script>
+        <script src="/libs/d3/d3.min.js"></script>
+        <script src="/libs/sweetalert/lib/sweet-alert.min.js"></script>
+    </head>
+
+    <body ng-controller="MainCtrl">
+        <div id="full-wrapper">
+            <ng-view></ng-view>
+        </div>
+    </body>
+
+    <!-- Overseer scripts -->
+    <script src="/js/services.js"></script>
+    <script src="/js/controllers.js"></script>
+    <script src="/js/filters.js"></script>
+    <script src="/js/directives.js"></script>
+    <script src="/js/app.js"></script>
+</html>
