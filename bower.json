@@ -1,0 +1,12 @@
+{
+  "name": "overseer",
+  "devDependencies": {},
+  "dependencies": {
+    "angular": "~1.2.x",
+    "angular-route": "~1.2.x",
+    "angular-animate": "~1.2.x",
+    "d3": "~3.4.13",
+    "sweetalert": "~0.3.1",
+    "foundation": "zurb/bower-foundation#~5.4.7"
+  }
+}
