@@ -1,3 +1,9 @@
+# IDE
+.idea
+
+# Overseer Local Files
+overseer.json
+
 # Logs
 logs
 *.log

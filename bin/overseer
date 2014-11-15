@@ -1,0 +1,80 @@
+#!/usr/bin/env node
+
+'use strict';
+
+var commander = require('commander'),
+    fs        = require('fs'),
+    path      = require('path'),
+    pkg       = require('../package.json'),
+    daemon    = require('../lib/daemon');
+
+commander.version(pkg.version)
+    .option('-s --silent', 'hide all messages', false)
+    .usage('[cmd]');
+
+// Silent mode on
+if (process.argv.indexOf('-s') > -1) {
+    global.console.log = function(){};
+    global.console.error = function(){};
+}
+
+// Check for root
+if (process.getuid() != 0) {
+    console.log("Expected to run as root");
+    process.exit(1);
+}
+
+commander.command('start <master|client>')
+    .description('Start the master or client daemons')
+    .action(function(cmd) {
+        if (cmd == 'master') {
+            console.log('Starting master daemon');
+            daemon.startMaster();
+        } else if (cmd == 'client') {
+            daemon.startClient();
+        } else {
+            commander.outputHelp();
+            process.exit(0);
+        }
+    });
+
+commander.command('stop <master|client>')
+    .description('Stop the master or client daemons')
+    .action(function(cmd) {
+        if (cmd == 'master') {
+            console.log('Stopping master daemon');
+            daemon.stopMaster();
+        } else if (cmd == 'client') {
+            console.log('Stopping client daemon');
+            daemon.stopClient();
+        } else {
+            commander.outputHelp();
+            process.exit(0);
+        }
+    });
+
+commander.command('restart <master|client>')
+    .description('Restart the master or client daemons')
+    .action(function(cmd) {
+        if (cmd == 'master') {
+            console.log('Restarting master daemon');
+            daemon.restartMaster();
+        } else if (cmd == 'client') {
+            console.log('Restarting client daemon');
+            daemon.restartClient();
+        } else {
+            commander.outputHelp();
+            process.exit(0);
+        }
+    });
+
+commander.parse(process.argv);
+
+//
+// Display help
+//
+if (process.argv.length == 2) {
+    commander.parse(process.argv);
+    commander.outputHelp();
+    process.exit(0);
+}
