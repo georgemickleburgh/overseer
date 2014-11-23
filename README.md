@@ -16,4 +16,16 @@ npm install -g overseer
 
 ### How to use
 
-Start the server
+The client server must be run on every server which needs to be monitored:
+
+```bash
+sudo overseer start client
+```
+
+The master server runs the actual monitoring dashboard:
+
+```bash
+sudo overseer start master
+```
+
+(the master and client servers can be run on the same server, if you want to monitor that server)
