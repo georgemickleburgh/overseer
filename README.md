@@ -29,3 +29,6 @@ sudo overseer start master
 ```
 
 (the master and client servers can be run on the same server, if you want to monitor that server)
+
+### Configuration
+
