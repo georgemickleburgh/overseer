@@ -39,7 +39,7 @@ master.startServer = function() {
                     } else {
                         res.send('success');
                     }
-                })
+                });
         }
     });
 

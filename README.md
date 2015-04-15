@@ -30,5 +30,16 @@ sudo overseer start master
 
 (the master and client servers can be run on the same server, if you want to monitor that server)
 
+Now, visit the overseer master server's URL via port 34747 (i.e. http://localhost:34747).
+
 ### Configuration
 
+Once the master server has been run for the first, it will create a file in a new .overseer directory within the local user directory. For example:
+
+```bash
+~/.overseer/config.json
+```
+
+The will contain a JSON array of the servers which will be monitored by overseer. Any changes to this document should be reflected instantly on the master server, but if there are any issues, it should be restarted.
+
+[logo]: docs/screenshots/example-master.png "Example setup"

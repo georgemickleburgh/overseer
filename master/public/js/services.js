@@ -1,7 +1,9 @@
 angular.module('overseer.services', [])
+    // Primary service, contains core methods
     .service('overseer', ['$http', '$interval', function($http, $interval) {
         var config = {};
 
+        // Send a request back to the master server to check the server list
         var reloadServerList = function(callback) {
             $http.get('/get/serverlist')
                 .success(function(data, status) {
@@ -15,6 +17,7 @@ angular.module('overseer.services', [])
                 });
         };
 
+        // Return the list of servers
         var getServers = function() {
             if (config.hasOwnProperty('servers')) {
                 return config.servers;
@@ -24,6 +27,7 @@ angular.module('overseer.services', [])
             }
         };
 
+        // Get a single server's information
         var getServerInfo = function(serverId, callback) {
             var server = config.servers[serverId];
 
@@ -43,6 +47,7 @@ angular.module('overseer.services', [])
             config.servers[serverId].info = info;
         };
 
+        // Run a server reload every 3 seconds to check for updates
         $interval(function() {
             reloadServerList(function() {
                 // Check if we have servers
@@ -58,6 +63,7 @@ angular.module('overseer.services', [])
             });
         }, 3000);
 
+        // Make methods publically available
         return {
             getServers: getServers,
             getServerInfo: getServerInfo,

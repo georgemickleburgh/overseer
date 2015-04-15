@@ -1,6 +1,6 @@
 {
     "name": "overseer-monitor",
-    "version": "0.0.1",
+    "version": "0.0.1b",
     "description": "overseer is a monitoring tool for Linux/Mac OS X which is designed as a dashboard for multiple servers.",
     "main": "index.js",
     "preferGlobal": "true",
