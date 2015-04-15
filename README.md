@@ -42,4 +42,4 @@ Once the master server has been run for the first, it will create a file in a ne
 
 The will contain a JSON array of the servers which will be monitored by overseer. Any changes to this document should be reflected instantly on the master server, but if there are any issues, it should be restarted.
 
-[logo]: https://github.com/earthly/overseer/blob/master/docs/screenshots/example-master.png "Example setup"
+![Example](https://github.com/earthly/overseer/blob/master/docs/screenshots/example-master.png "Example setup")
