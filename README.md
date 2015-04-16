@@ -11,7 +11,7 @@ server stats, such as Memory, Disk Space and CPU Load.
 Install this module via NPM:
 
 ```bash
-npm install -g overseer
+npm install -g overseer-monitor
 ```
 
 ### How to use
